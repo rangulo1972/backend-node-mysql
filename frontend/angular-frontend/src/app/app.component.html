@@ -1,0 +1,31 @@
+<h1>CREACION Y LISTADO DE USUARIOS</h1>
+
+<!-- comentario -->
+<form (ngSubmit)="addUser()">
+  <input [(ngModel)]="firstName" name="firstName" placeholder="Ingrese su nombre" required>
+
+  <input [(ngModel)]="lastName" name="lastName" placeholder="Ingrese su apellido" required>
+
+  <input [(ngModel)]="age" name="age" placeholder="Ingrese su edad" required>
+
+  <button type="submit"> Agregar Usuario nuevo </button>
+</form>
+
+<hr>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Edad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.age }}</td>
+    </tr>
+  </tbody>
+</table>
